@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 
   buttonView: {
     width: SCREEN_WIDTH,
-    padding: 8,
+    padding: 12,
     borderTopWidth: 0.5,
     borderTopColor: 'lightgrey',
     justifyContent: 'space-between',
@@ -143,13 +143,13 @@ class SimplePicker extends Component {
         <View style={styles.basicContainer}>
           <View style={styles.modalContainer}>
             <View style={styles.buttonView}>
-              <TouchableOpacity onPress={this.onPressCancel}>
+              <TouchableOpacity hitSlop={{top: 10, left: 10, bottom: 10, right: 10}} onPress={this.onPressCancel}>
                 <Text style={{ color: buttonColor }}>
                   {this.props.cancelText || 'Cancel'}
                 </Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={this.onPressSubmit}>
+              <TouchableOpacity hitSlop={{top: 10, left: 10, bottom: 10, right: 10}} onPress={this.onPressSubmit}>
                 <Text style={{ color: buttonColor }}>
                   {this.props.confirmText || 'Confirm'}
                 </Text>
